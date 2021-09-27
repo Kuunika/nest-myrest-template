@@ -3,7 +3,7 @@ import {
   HealthCheckService,
   HttpHealthIndicator,
   HealthCheck,
-  MongooseHealthIndicator,
+  TypeOrmHealthIndicator,
 } from '@nestjs/terminus';
 import { LogInterceptor } from '../log/interceptors/log.interceptor';
 
@@ -13,7 +13,7 @@ export class HealthController {
   constructor(
     private health: HealthCheckService,
     private http: HttpHealthIndicator,
-    private db: MongooseHealthIndicator,
+    private db: TypeOrmHealthIndicator,
   ) {}
 
   @Get()
